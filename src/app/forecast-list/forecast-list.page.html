@@ -36,8 +36,8 @@
                 </ion-card-title>
             </ion-card-header>
         </ion-card>
-    <ng-container *ngFor="let forecast of forecastList">
+    <ion-list *ngFor="let forecast of forecastList">
         <wapi-weather-line-item [forecast]="forecast" (click)="showDetails(forecast)">
         </wapi-weather-line-item>
-    </ng-container>
+    </ion-list>
 </wapi-content>
