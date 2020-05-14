@@ -31,17 +31,12 @@ export class ForecastService {
             this.buildUrl(city, latitude, longitude)
         ).pipe(tap( response => {
             let city = new City();
-            console.log(response['city']);
-            console.log((response['city'])['name']);
             city.name = (response['city'])['name'];
             city.latitude = response['city']['coord']['lat']
             city.longitude = response['city']['coord']['lon']
-            console.log(city)
             this.citySubject.next(city);
         }), tap(response => {
             let forecastList = this.extractForecastArray(response['list'])
-            console.log('fetchForecast')
-            console.log(forecastList)
             this.forecastListSubject.next(forecastList);
         })).subscribe()
     }
