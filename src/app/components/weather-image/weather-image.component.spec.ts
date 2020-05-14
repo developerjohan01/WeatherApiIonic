@@ -21,4 +21,10 @@ describe('WeatherImageComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should build the image path', () => {
+    component.imageName = 'some-name';
+    expect(component.imagePath()).toEqual('assets/images/some-name@2x.png');
+  });
+
 });
