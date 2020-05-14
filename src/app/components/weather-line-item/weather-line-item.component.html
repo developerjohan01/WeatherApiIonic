@@ -1,0 +1,17 @@
+<ion-card button="true">
+    <ion-card-header>
+        <ion-card-title>
+            {{forecast?.weather.main}}
+        </ion-card-title>
+        <ion-card-subtitle>
+            <ion-label>{{forecast?.dateText}}</ion-label>
+        </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item lines="none">
+            <wapi-thumbnail [iconName]="forecast.weather.icon"></wapi-thumbnail>
+            <ion-label slot="end">{{forecast?.main.temp}} C</ion-label>
+        </ion-item>
+    </ion-card-content>
+</ion-card>
+

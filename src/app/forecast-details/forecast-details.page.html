@@ -1,0 +1,12 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-back-button default-href="/forecast-list"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Forecast @ {{forecast.dateText}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<wapi-content>
+    <wapi-weather-card [forecast]="forecast"></wapi-weather-card>
+</wapi-content>

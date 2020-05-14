@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar color="primary">
+        <ion-title>5 day Forecast (every 3 hours)</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<wapi-content>
+    <form [formGroup]="placeForm"
+          (ngSubmit)="getForecast()" [ngClass]="{'was-validated': hasBeenValidated}"
+          (keyup.enter)="getForecast()">
+        <ion-list class="ion-padding">
+            <ion-item>
+                <ion-input placeholder="City" formControlName="cityName"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input placeholder="Latitude" formControlName="latitude"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-input placeholder="Longitude" formControlName="longitude"></ion-input>
+            </ion-item>
+        </ion-list>
+<!--        <div>{{placeForm.value | json}}</div>-->
+        <div class="ion-padding">
+            <ion-button type="button" fill="clear" size="block" [disabled]="lookingUpPlace" (click)="getPlace()">
+                <ng-container *ngIf="!lookingUpPlace">Get coordinates</ng-container>
+                <ion-spinner *ngIf="lookingUpPlace"></ion-spinner>
+            </ion-button>
+            <ion-button type="submit" fill="clear" size="block" [disabled]="lookingUpPlace"><b>Get forecast</b></ion-button>
+            <ion-button type="button" fill="clear" size="block" color="danger" (click)="clearForm()">Clear</ion-button>
+        </div>
+    </form>
+        <ion-card *ngIf="!forecastList.length" button="true">
+            <ion-card-header>
+                <ion-card-title>
+                    No Data!
+                </ion-card-title>
+            </ion-card-header>
+        </ion-card>
+    <ng-container *ngFor="let forecast of forecastList">
+        <wapi-weather-line-item [forecast]="forecast" (click)="showDetails(forecast)">
+        </wapi-weather-line-item>
+    </ng-container>
+</wapi-content>

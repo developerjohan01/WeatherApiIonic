@@ -1,0 +1,24 @@
+<ion-card>
+    <ion-card-header>
+        <wapi-avatar [iconName]="forecast?.weather.icon">
+        </wapi-avatar>
+        <ion-card-title>
+            {{forecast?.weather.main}}
+        </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-item lines="none">
+            <ion-label>
+                {{forecast?.weather.description}}
+            </ion-label>
+            <ion-label>
+                {{forecast?.weather.icon}}
+            </ion-label>
+        </ion-item>
+        <ion-item lines="none">
+            <ion-label>
+                {{forecast?.main.temp}} C
+            </ion-label>
+        </ion-item>
+    </ion-card-content>
+</ion-card>
