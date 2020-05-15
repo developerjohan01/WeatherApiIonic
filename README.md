@@ -1,5 +1,5 @@
 # WetherApiIonic
-Ionic + Angular App built with TypeScript - [Capacitor](https://capacitor.ionicframework.com/docs/) is included to enable build and deploy
+[Ionic](https://ionicframework.com/docs) + [Angular](https://angular.io/) App built with TypeScript - [Capacitor](https://capacitor.ionicframework.com/docs/) is included to enable build and deploy
 on iOS and Android devices if needed.
 
 The app is calling the [OpenWheather API](https://openweathermap.org/api) and is displaying  a list of forecasts. 
