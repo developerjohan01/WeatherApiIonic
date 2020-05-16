@@ -15,8 +15,8 @@ import {ComponentsModule} from "../components/components.module";
     ReactiveFormsModule,
     FormsModule,
     IonicModule,
-    ForecastListPageRoutingModule,
-    ComponentsModule
+    ComponentsModule,
+    ForecastListPageRoutingModule
   ],
   declarations: [ForecastListPage]
 })

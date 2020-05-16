@@ -14,7 +14,7 @@ export class WeatherLineItemComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    console.log(this.forecast);
+    // console.log(this.forecast);
   }
 
 }
